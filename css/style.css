@@ -64,3 +64,12 @@
     font-weight: bold;
     color: #444
 }
+
+#food-img-1, #food-img-2,#food-img-3, #food-img-4 {
+    border-radius: 25px;
+    max-width: 75%;
+}
+
+.hide {
+    display:none;
+}

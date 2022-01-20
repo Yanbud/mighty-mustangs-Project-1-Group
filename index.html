@@ -5,38 +5,83 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
     <title>Film-Bites!</title>
-
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
-    <nav role="navigation" class="orange">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Film-Bites</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#movie-section">Movies</a></li>
-                <li><a href="#food-section">Foods</a></li>
-            </ul>
-
-            <ul id="nav-mobile" class="sidenav">
-                <li><a href="#movie-section">Movies</a></li>
-                <li><a href="#food-section">Foods</a></li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <nav role="navigation" class="orange nav-custom">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Film-Bites!</a>
         </div>
     </nav>
+    <!-- menu -->
+    <div class="container">
+        <div class="fav-nav">
+            <ul class="right">
+                <li><a href="#" data-target="slide-out2" class="sidenav-trigger btn-flat">My Movies</a></li>
+                <li><a href="#" data-target="slide-out1" class="sidenav-trigger btn-flat">My Foods</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- slide1 Structure for foods -->
+    <div id="slide-out1" class="sidenav">
+        <h2 class="headline">Selected Foods</h2>
+        <div class="fav-foods">
+        </div>
+    </div>
+    <!-- slide2 Structure for movies -->
+    <div id="slide-out2" class="sidenav">
+        <h2 class="headline">Selected Movies</h2>
+        <div class="fav-movies">
+        </div>
+    </div>
+
+    <!-- Modal 1 Structure for foods -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content myfood">
+            <form action="#" id="food-check">
+            </form>
+            <div class="recipe">
+                This is the best chocolate chip cookie recipe ever. No funny ingredients, no chilling time, etc. Just a simple, straightforward, amazingly delicious, doughy yet still fully cooked, chocolate chip cookie that turns out perfectly every single time!Preheat
+                oven to 375 degrees F. Line a baking pan with parchment paper and set aside. In a separate bowl mix flour, baking soda, salt, baking powder. Set aside. Cream together butter and sugars until combined. Beat in eggs and vanilla until fluffy.
+                Mix in the dry ingredients until combined. Add 12 oz package of chocolate chips and mix well. Roll 2-3 TBS (depending on how large you like your cookies) of dough at a time into balls and place them evenly spaced on your prepared cookie
+                sheets. (alternately, use a small cookie scoop to make your cookies). Bake in preheated oven for approximately 8-10 minutes. Take them out when they are just BARELY starting to turn brown. Let them sit on the baking pan for 2 minutes before
+                removing to cooling rack.
+            </div>
+        </div>
+        <div class="modal-footer"> <a id="close-button" href="#!" class="modal-close btn-flat" onclick="location.reload()">Close</a></div>
+    </div>
+    <!-- Modal 2 Structure for movies -->
+    <div id="modal2" class="modal modal-fixed-footer">
+        <div class="modal-content mymovie">
+            <form action="#" id="movie-check">
+            </form>
+            <div class="recipe">
+                Riley (Kaitlyn Dias) is a happy, hockey-loving 11-year-old Midwestern girl, but her world turns upside-down when she and her parents move to San Francisco. Riley's emotions -- led by Joy (Amy Poehler) -- try to guide her through this difficult, life-changing
+                event. However, the stress of the move brings Sadness (Phyllis Smith) to the forefront. When Joy and Sadness are inadvertently swept into the far reaches of Riley's mind, the only emotions left in Headquarters are Anger, Fear and Disgust.
+                Rating: PG (Some Action|Mild Thematic Elements) Genre: Fantasy, Animation, Comedy, Kids & Family Original Language: English Director: Pete Docter Producer: Jonas Rivera Writer: Pete Docter, Meg LeFauve, Josh Cooley Release Date (Theaters):
+                Jun 19, 2015 Wide Release Date (Streaming): Nov 3, 2015 Box Office (Gross USA): $2.0M Runtime: 1h 35m Distributor: Walt Disney Sound Mix: Dolby Atmos, Datasat View the collection: Pixar
+
+            </div>
+        </div>
+        <div class="modal-footer"> <a id="close-button" href="#!" class="modal-close btn-flat" onclick="location.reload()">Close</a></div>
+    </div>
+    <!--   Movie Section   -->
     <div class="section" id="movie-section">
         <div class="container movie-tabs">
             <div class="row">
-                <div class="col choice">
-                    <a class="on">Action</a>
-                    <a class="">Comedy</a>
-                    <a class="">Drama</a>
-                    <a class="">Fantasy</a>
-                    <a class="">Random Choice</a>
-                    <span class="search"><input type="text" class="search-input" /><button>Search</button></span>
+                <div class="col choice"><span class="movie-choice">
+                <button>Action</button>
+                <button>Comedy</button>
+                <button>Drama</button>
+                <button>Fantasy</button>
+                <button>Random Choice</button></span>
+                    <span class="search"><input type="text " class="search-input " /><button><i class="material-icons">search</i></button></span>
                 </div>
             </div>
         </div>
@@ -46,22 +91,26 @@
                 <div class="row">
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img src="images/poster.jpg" /></a>
+                            <a href="#modal2" class="modal-trigger"> <img src="images/poster.jpg" class="z-depth-3" /></a>
+                            <div>EXAMPLE</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img src="images/poster.jpg" /></a>
+                            <a href="#modal2" class="modal-trigger"> <img src="images/poster.jpg" class="z-depth-3" /></a>
+                            <div>EXAMPLE</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img src="images/poster.jpg" /></a>
+                            <a href="#modal2" class="modal-trigger"> <img src="images/poster.jpg" class="z-depth-3" /></a>
+                            <div>EXAMPLE</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"><img src="images/poster.jpg" /></a>
+                            <a href="#modal2" class="modal-trigger"> <img src="images/poster.jpg" class="z-depth-3" /></a>
+                            <div>EXAMPLE</div>
                         </div>
                     </div>
                 </div>
@@ -69,71 +118,63 @@
             </div>
 
         </div>
-        <br><br>
     </div>
+    <!--   Food Section   -->
     <div class="section brown" id="food-section">
         <div class="container food-tabs">
             <div class="row">
-                <div class="col choice">
-                    <button id='btnBeef'>Beef</button>
-                    <button id='btnChicken'>Chicken</button>
-                    <button id='btnSeafood'>Seafood</button>
-                    <button id='btnVegetarian'>Vegan</button>
-                    <a class="">Random Choice</a><span class="search"><input type="text" class="search-input" /><button>Search</button></span>
+                <div class="col choice"><span class="food-choice">
+                    <button id="btnBeef">Beef</button>
+                    <button id="btnChicken">Chicken</button>
+                    <button id="btnSeafood">Seafood</button>
+                    <button id="btnVegetarian">Vegan</button>
+                    <button>Random Choice</button></span><span class="search"><input type="text " class="search-input " /><button><i class="material-icons">search</i></button></span>
                 </div>
-
-
-
             </div>
         </div>
-
-
-        <div class="container food-imgs">
+        <div class="container">
             <div class="section">
-
                 <!--   Icon Section   -->
                 <div class="row">
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img id = food-img-1 src="images/food.jpg" /></a><div id = "food-title-1">EXAMPLE</div>
+                            <a href="#modal1" class="modal-trigger"> <img id="food-img-1" src="images/food.jpg" class="z-depth-3" /></a>
+                            <div id="food-title-1">EXAMPLE</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img id = food-img-2 src ="images/food.jpg" /></a><div id = "food-title-2">EXAMPLE</div>
+                            <a href="#modal1" class="modal-trigger"> <img id="food-img-2" src="images/food.jpg" class="z-depth-3" /></a>
+                            <div id="food-title-2">EXAMPLE</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img id = food-img-3 src ="images/food.jpg" /></a><div id = "food-title-3">EXAMPLE</div>
+                            <a href="#modal1" class="modal-trigger"> <img id="food-img-3" src="images/food.jpg" class="z-depth-3" /></a>
+                            <div id="food-title-3">EXAMPLE</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img id = food-img-4 src="images/food.jpg" /></a><div id = "food-title-4">EXAMPLE</div>
+                            <a href="#modal1" class="modal-trigger"> <img id="food-img-4" src="images/food.jpg" class="z-depth-3" /></a>
+                            <div id="food-title-4">EXAMPLE</div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-        <br><br>
     </div>
-    <footer class=" page-footer brown">
-
-        <div class="footer-copyright ">
-            <div class="container ">
+    <footer class="page-footer brown">
+        <div class="footer-copyright">
+            <div class="container">
                 © 2022 Film-Bites
             </div>
         </div>
     </footer>
-
-
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-    <script src="js/init.js "></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
     <script src="js/scriptFood.js"></script>
 </body>
 

@@ -2,33 +2,106 @@
 
 
 /**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
+ * Use this file to override Materialize files
  * Made By MaterializeCSS.com
  */
 
-.icon-block {
-    padding: 0 15px;
+body {
+    background-color: #eee;
 }
 
-.icon-block .material-icons {
-    font-size: inherit;
+.nav-custom {
+    background-color: #734E88 !important;
 }
 
-.choice a {
-    background-color: #ddd;
-    border-radius: 5px;
-    margin-right: 20px;
-    color: #555;
-    padding: 2px 12px 5px;
-    cursor: pointer;
+.brown {
+    background-color: #BECDA7 !important;
+}
+
+.nav-custom i.material-icons {
+    display: inline;
+    vertical-align: middle;
+    margin-right: 4px;
+    font-size: 16px;
+}
+
+.brand-logo {
+    font-family: 'Oooh Baby', cursive;
     font-weight: bold;
 }
 
-.choice a.on {
-    background-color: orange;
-    color: #fff
+.choice span {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.icon-block {
+    text-align: center;
+}
+
+.icon-block div {
+    font-size: 100%;
+    margin: 0;
+    font-weight: bold;
+}
+
+.icon-block div {
+    color: #666;
+}
+
+.myfood,
+.mymovie {
+    padding: 25px;
+}
+
+.myfood h2,
+.mymovie h2 {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.myfood img,
+.mymovie img {
+    width: 100px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.myfood input,
+.mymovie input {
+    display: block;
+}
+
+.myfood label span,
+.mymovie label span {
+    color: #333;
+    padding-left: 2px;
+}
+
+.myfood div,
+.mymovie div {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.myfood div.recipe,
+.mymovie div.recipe {
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px
+}
+
+.choice button {
+    margin-right: 5px;
+    padding: 2px 12px 5px;
+    cursor: pointer;
+}
+
+a {
+    color: orange;
 }
 
 .movie-tabs,
@@ -39,28 +112,116 @@
 .icon-block img {
     width: 200px;
     height: auto;
+    border: 5px solid #fff;
 }
 
 .section {
-    margin-top: 0
+    margin-top: 0;
+    padding-top: 0.5rem
 }
 
 .search input.search-input {
-    border: 1px solid #ccc;
-    width: 100px;
-    height: 20px;
+    border: 1px solid #999;
+    width: 150px;
+    height: 28px;
     padding: 2px 4px 4px;
-    border-radius: 5px 0 0 5px;
     background-color: #fff;
+    border-right: none;
 }
 
 .search button {
     background-color: #ddd;
-    border: 1px solid #ddd;
-    border-radius: 0 5px 5px 0;
+    border: 1px solid #999;
     cursor: pointer;
-    padding: 4px 10px 5px;
+    padding: 0 5px;
+    height: 28px;
+    line-height: 28px;
     vertical-align: top;
+}
+
+.modal-content h3 {
+    font-size: 2rem;
+}
+
+.modal-content h4 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.ingredient-item span {
+    display: inline;
+}
+
+.fav-nav {
+    position: relative;
+}
+
+.fav-nav ul {
+    position: absolute;
+    right: 0;
+    top: -60px;
+}
+
+.fav-nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.fav-nav ul li a {
+    color: #fff;
+}
+
+.fav-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.fav-foods,
+.fav-movies {
+    display: block;
+    margin: 20px
+}
+
+.button-del {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #aaa;
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+
+.button-del:active {
+    background: none;
+}
+
+.button-del:hover {
+    color: #4e885f
+}
+
+.img-block {
+    margin-bottom: 1rem;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.add-date {
+    font-size: 12px;
+    color: #666;
+}
+
+.img-block h2 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 600;
+}
+
+h2.headline {
+    font-size: 20px;
     font-weight: bold;
-    color: #444
+    PADDING: 20px;
+    border-bottom: 1px solid #eee;
+    margin: 0
 }

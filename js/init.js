@@ -1,10 +1,8 @@
-var ingredientsContainerOne = document.querySelector("#ingredients-container-1");
-
-$(document).ready(function () {
+$(document).ready(function() {
     $('.modal').modal();
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('.sidenav').sidenav();
 });
 
@@ -105,9 +103,6 @@ function displayMod(event) {
 
     foodFormEl.append(h2, img, label);
     myfood.textContent = '';
-    getInstruction(titVal);
-    getIngredientsList(titVal);
-
 
 }
 
@@ -121,6 +116,7 @@ function removeFood(event) {
     setFood();
 
 }
+init();
 
 $('.fav-foods').children('div').on('click', removeFood);
 foodBlock.on('click', displayMod);
@@ -214,183 +210,3 @@ function removeMovie(event) {
 $('.fav-movies').children('div').on('click', removeMovie);
 foodBlock.on('click', displayModMovie);
 movieFormEl.on('click', handleMovieFav);
-
-
-var getInstruction = function (titVal) {
-
-    var requestUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + titVal;
-    fetch(requestUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            //   var titVal = divEl.querySelector('div').textContent;     
-            //   var element = event.target;
-
-            //   var divEl = element.parentElement.parentElement;
-            //   console.log(divEl);
-
-
-            modalRecipeInstructions.textContent = "";
-            //   modalRecipeInstructions.textContent = data.meals[0].strInstructions;
-
-
-            modalRecipeInstructions.textContent = data.meals[0].strInstructions;
-        })
-
-}
-
-var getIngredientsList = function (titVal) {
-    var requestUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + titVal;
-    fetch(requestUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            ingredientsContainerOne.textContent = '';
-            if (data.meals[0].strIngredient1 !== "" && data.meals[0].strIngredient1 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '1.' + ' ' + data.meals[0].strIngredient1 + ' ' + '(' + data.meals[0].strMeasure1 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient2 !== "" && data.meals[0].strIngredient2 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '2.' + ' ' + data.meals[0].strIngredient2 + ' ' + '(' + data.meals[0].strMeasure2 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient3 !== "" && data.meals[0].strIngredient3 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '3.' + ' ' + data.meals[0].strIngredient3 + ' ' + '(' + data.meals[0].strMeasure3 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient4 !== "" && data.meals[0].strIngredient4 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '4.' + ' ' + data.meals[0].strIngredient4 + ' ' + '(' + data.meals[0].strMeasure4 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient5 !== "" && data.meals[0].strIngredient5 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '5.' + ' ' + data.meals[0].strIngredient5 + ' ' + '(' + data.meals[0].strMeasure5 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient6 !== "" && data.meals[0].strIngredient6 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '6.' + ' ' + data.meals[0].strIngredient6 + ' ' + '(' + data.meals[0].strMeasure6 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient7 !== "" && data.meals[0].strIngredient7 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '7.' + ' ' + data.meals[0].strIngredient7 + ' ' + '(' + data.meals[0].strMeasure7 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient8 !== "" && data.meals[0].strIngredient8 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '8.' + ' ' + data.meals[0].strIngredient8 + ' ' + '(' + data.meals[0].strMeasure8 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            }
-            if (data.meals[0].strIngredient9 !== "" && data.meals[0].strIngredient9 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '9.' + ' ' + data.meals[0].strIngredient9 + ' ' + '(' + data.meals[0].strMeasure9 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient10 !== "" && data.meals[0].strIngredient10 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '10.' + ' ' + data.meals[0].strIngredient10 + ' ' + '(' + data.meals[0].strMeasure10 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient11 !== "" && data.meals[0].strIngredient11 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '11.' + ' ' + data.meals[0].strIngredient11 + ' ' + '(' + data.meals[0].strMeasure11 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient12 !== "" && data.meals[0].strIngredient12 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '12.' + ' ' + data.meals[0].strIngredient12 + ' ' + '(' + data.meals[0].strMeasure12 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient13 !== "" && data.meals[0].strIngredient13 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '13.' + ' ' + data.meals[0].strIngredient13 + ' ' + '(' + data.meals[0].strMeasure13 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient14 !== "" && data.meals[0].strIngredient14 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '14.' + ' ' + data.meals[0].strIngredient14 + ' ' + '(' + data.meals[0].strMeasure14 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient15 !== "" && data.meals[0].strIngredient15 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '15.' + ' ' + data.meals[0].strIngredient15 + ' ' + '(' + data.meals[0].strMeasure15 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient16 !== "" && data.meals[0].strIngredient16 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '16.' + ' ' + data.meals[0].strIngredient16 + ' ' + '(' + data.meals[0].strMeasure16 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient17 !== "" && data.meals[0].strIngredient17 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '17.' + ' ' + data.meals[0].strIngredient17 + ' ' + '(' + data.meals[0].strMeasure17 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient18 !== "" && data.meals[0].strIngredient18 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '18.' + ' ' + data.meals[0].strIngredient18 + ' ' + '(' + data.meals[0].strMeasure18 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient19 !== "" && data.meals[0].strIngredient19 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '19.' + ' ' + data.meals[0].strIngredient19 + ' ' + '(' + data.meals[0].strMeasure19 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            if (data.meals[0].strIngredient20 !== "" && data.meals[0].strIngredient20 !== null) {
-                var listIngredient = document.createElement('p');
-                listIngredient.textContent = '20.' + ' ' + data.meals[0].strIngredient20 + ' ' + '(' + data.meals[0].strMeasure20 + ')';
-                ingredientsContainerOne.append(listIngredient)
-            } else {
-                return data
-            }
-            return data;
-        }
-        )
-}
-
-init();

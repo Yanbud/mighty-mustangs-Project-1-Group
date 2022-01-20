@@ -8,27 +8,87 @@
  * Made By MaterializeCSS.com
  */
 
+body {
+    background-color: #eee;
+}
+
+.nav-custom i.material-icons {
+    display: inline;
+    vertical-align: middle;
+    margin-right: 4px;
+    font-size: 16px;
+}
+
 .icon-block {
-    padding: 0 15px;
+    position: relative;
 }
 
-.icon-block .material-icons {
-    font-size: inherit;
+.icon-block h2 {
+    font-size: 100%;
+    margin: 0;
 }
 
-.choice a {
-    background-color: #ddd;
-    border-radius: 5px;
-    margin-right: 20px;
-    color: #555;
-    padding: 2px 12px 5px;
-    cursor: pointer;
+.food-imgs div {
+    color: #ddd;
+}
+
+.myfood {
+    padding: 15px;
+    background-color: #eee;
+}
+
+.myfood h2 {
+    font-size: 20px;
     font-weight: bold;
 }
 
-.choice a.on {
+.myfood img {
+    width: 100px;
+    display: block;
+}
+
+.myfood input {
+    display: block;
+}
+
+.icon-block span i {
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.icon-block span {
+    text-align: center;
+    font-size: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    border-radius: 0 0 10px 0;
+    cursor: pointer;
+    border-right: 3px solid #795548;
+    border-bottom: 3px solid #795548;
+}
+
+.icon-block .on {
     background-color: orange;
-    color: #fff
+}
+
+.icon-block .off {
+    background-color: #555;
+}
+
+.search {
+    margin-left: 10px;
+}
+
+.choice button {
+    margin-right: 5px;
+    padding: 2px 12px 5px;
+    cursor: pointer;
 }
 
 .movie-tabs,
@@ -47,29 +107,74 @@
 
 .search input.search-input {
     border: 1px solid #ccc;
-    width: 100px;
-    height: 20px;
+    width: 150px;
+    height: 28px;
     padding: 2px 4px 4px;
-    border-radius: 5px 0 0 5px;
     background-color: #fff;
 }
 
 .search button {
     background-color: #ddd;
-    border: 1px solid #ddd;
-    border-radius: 0 5px 5px 0;
+    border: 1px solid #bbb;
     cursor: pointer;
-    padding: 4px 10px 5px;
+    padding: 0 5px;
+    height: 28px;
+    line-height: 28px;
     vertical-align: top;
+}
+
+.modal-content h3 {
+    font-size: 2rem;
+}
+
+.modal-content h4 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.ingredient-item span {
+    display: inline;
+}
+
+.fav-nav {
+    position: relative;
+}
+
+.fav-nav ul {
+    position: absolute;
+    right: 0;
+    top: -60px;
+}
+
+.fav-nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.fav-nav ul li a {
+    color: #fff;
+}
+
+.fav-nav ul li a i {
+    font-size: 16px;
+}
+
+h2.headline {
+    font-size: 20px;
     font-weight: bold;
-    color: #444
+    margin: 10px;
 }
 
-#food-img-1, #food-img-2,#food-img-3, #food-img-4 {
-    border-radius: 25px;
-    max-width: 75%;
+.fav-foods {
+    display: block;
+    margin: 20px
 }
 
-.hide {
-    display:none;
+#food-check label span {
+    color: #333;
+}
+
+#food-check div {
+    font-size: 24px;
+    font-weight: bold;
 }

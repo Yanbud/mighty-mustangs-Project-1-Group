@@ -13,30 +13,23 @@
 </head>
 
 <body>
-    <nav role="navigation" class="orange">
+    <nav role="navigation" class="orange nav-custom">
         <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Film-Bites</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#movie-section">Movies</a></li>
-                <li><a href="#food-section">Foods</a></li>
-            </ul>
-
-            <ul id="nav-mobile" class="sidenav">
-                <li><a href="#movie-section">Movies</a></li>
-                <li><a href="#food-section">Foods</a></li>
-            </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
     </nav>
+    <!--   Movie Section   -->
+
+
     <div class="section" id="movie-section">
         <div class="container movie-tabs">
             <div class="row">
-                <div class="col choice">
-                    <a class="on">Action</a>
-                    <a class="">Comedy</a>
-                    <a class="">Drama</a>
-                    <a class="">Fantasy</a>
-                    <a class="">Random Choice</a>
-                    <span class="search"><input type="text" class="search-input" /><button>Search</button></span>
+                <div class="col choice"><span class="movie-choice">
+                    <button class="on">Action</button>
+                    <button>Comedy</button>
+                    <button>Drama</button>
+                    <button>Fantasy</button>
+                    <button>Random Choice</button></span>
+                    <span class="search"><input type="text" class="search-input" /><button><i class="material-icons">search</i></button></span>
                 </div>
             </div>
         </div>
@@ -69,80 +62,108 @@
             </div>
 
         </div>
-        <br><br>
     </div>
-    <div class="section brown" id="food-section">
-        <div class="container food-tabs">
-            <div class="row">
-                <div class="col choice">
-                    <button id='btnBeef'>Beef</button>
-                    <button id='btnChicken'>Chicken</button>
-                    <button id='btnSeafood'>Seafood</button>
-                    <button id='btnVegetarian'>Vegan</button>
-                    <button id='btnDessert'>Dessert</button>
-                    <button id ='btnClear'>Clear choices</button>
-                    <a class="">Random Choice</a><span class="search"><input type="text" class="search-input" /><button>Search</button></span>
-                </div>
-<div>
-    <h2> Your selected food is: <SPAN id = 'selected-food-title'>PLACEHOLDER</SPAN></h2>
-</div>
 
 
+    <!-- slide Structure -->
+    <div class="container">
+        <div class="fav-nav">
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">My Movies</a></li>
+                <li><a href="#" data-target="slide-out" class="sidenav-trigger" id>My Foods</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="slide-out" class="sidenav">
+
+        <h2 class="headline">Selected Foods</h2>
+
+        <div class="fav-foods">
+
+        </div>
+    </div>
+
+
+
+    <!-- Modal 1  Structure -->
+    <div id="modal1" class="modal">
+        <div class="myfood">
+            <form action="#" id="food-check">
+            </form>
+            <div class="recipe">
+
+            <p id = "recipe-ingredients-amount"></p>
+            <div id = 'ingredients-container-1'>
+
+        </div>            
+        <p id = "recipe-instructions"></p>
             </div>
         </div>
+        <div class="modal-footer"> <a id="close-button" href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="location.reload();">Close</a></div>
+    </div>
 
-
-        <div class="container food-imgs">
+    <!--   Food Section   -->
+    <div class="section brown " id="food-section">
+        <div class="container food-tabs">
+            <div class="row">
+                <div class="col choice"><span class="food-choice">
+                    <button id="btnBeef">Click to search Beef</button>
+                    <button id="btnChicken">Click to search Chicken</button>
+                    <button id="btnSeafood">Click to search Seafood</button>
+                    <button id="btnVegetarian">Click to search Vegetarian</button>
+                    <button id="btnDessert">Click to search Dessert</button>
+                    <!-- <button>Random Choice</button></span><span class="search"><input type="text " class="search-input " /><button><i class="material-icons">search</i></button></span> -->
+                </div>
+            </div>
+        </div>
+        <div class="container">
             <div class="section">
 
                 <!--   Icon Section   -->
                 <div class="row">
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img id = food-img-1 src="images/food.jpg" /></a><div id = "food-title-1">EXAMPLE</div>
+                            <a href="#modal1" class="modal-trigger"> <img id="food-img-1" src="images/food.jpg" /></a>
+                            <div id="food-title-1">Search to see a recipe!</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <a href="#" target="_blank"> <img id = food-img-2 src ="images/food.jpg" /></a><div id = "food-title-2">EXAMPLE</div>
-                        </div>
-                    </div>
-                    <div class="col s12 m3" id = "food-div-3">
-                        <div class="icon-block">
-                            <a href="#" target="_blank"> <img id = food-img-3 src ="images/food.jpg" /></a><div id = "food-title-3">EXAMPLE</div>
+                            <a href="#modal1" class="modal-trigger"> <img id="food-img-2" src="images/food.jpg" /></a>
+                            <div id="food-title-2">Search to see a recipe!</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <input type="image" id = food-img-4 src="images/food.jpg" /><div id = "food-title-4">EXAMPLE</div>
+                            <a href="#modal1" class="modal-trigger"> <img id="food-img-3" src="images/food.jpg" /></a>
+                            <div id="food-title-3">Search to see a recipe!</div>
                         </div>
                     </div>
                     <div class="col s12 m3">
                         <div class="icon-block">
-                            <p> example</p>
-                            <p>example</p>
+                            <a href="#modal1" class="modal-trigger"> <img id="food-img-4" src="images/food.jpg" /></a>
+                            <div id="food-title-4">Search to see a recipe!</div>
                         </div>
+                    </div>
                 </div>
+
             </div>
 
         </div>
-        
-        <br><br>
     </div>
-    <footer class=" page-footer brown">
-
-        <div class="footer-copyright ">
-            <div class="container ">
+    <footer class="page-footer brown">
+        <div class="footer-copyright">
+            <div class="container">
                 © 2022 Film-Bites
             </div>
         </div>
     </footer>
-
-
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js "></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-    <script src="js/init.js "></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
     <script src="js/scriptFood.js"></script>
 </body>
 

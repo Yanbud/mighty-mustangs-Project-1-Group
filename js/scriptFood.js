@@ -52,6 +52,10 @@ var searchMealCategoryBeef = function () {
     })}
 ;
 
+//set beef as default category on page load
+searchMealCategoryBeef();
+
+
 //search chicken category
 var searchMealCategoryChicken = function () {
   var requestUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=chicken';

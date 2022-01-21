@@ -39,6 +39,10 @@ body {
     text-align: center;
 }
 
+.icon-block img{
+    border-radius: 25px;
+}
+
 .icon-block div {
     font-size: 100%;
     margin: 0;

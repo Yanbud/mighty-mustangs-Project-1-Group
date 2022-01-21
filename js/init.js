@@ -70,7 +70,9 @@ function handleFoodFav(event) {
     var element = event.target;
     if (element.matches('input') === true) {
         var divEl = element.parentElement.parentElement;
+        console.log(element)
         var imgSrc = divEl.querySelector('img').getAttribute('src');
+        console.log(imgSrc);
         var titVal = divEl.querySelector('h2').textContent;
         var recipe = {
             img: imgSrc,
@@ -394,3 +396,11 @@ var getIngredientsList = function (titVal) {
 }
 
 init();
+
+
+//function to display modal from local storage
+
+// var displayLocalModal = function(event){
+
+
+// }

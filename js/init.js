@@ -1,10 +1,10 @@
 var ingredientsContainerOne = document.querySelector("#ingredients-container-1");
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('.modal').modal();
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
     $('.sidenav').sidenav();
 });
 
@@ -218,14 +218,14 @@ foodBlock.on('click', displayModMovie);
 movieFormEl.on('click', handleMovieFav);
 
 
-var getInstruction = function (titVal) {
+var getInstruction = function(titVal) {
 
     var requestUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + titVal;
     fetch(requestUrl)
-        .then(function (response) {
+        .then(function(response) {
             return response.json();
         })
-        .then(function (data) {
+        .then(function(data) {
             console.log(data);
             //   var titVal = divEl.querySelector('div').textContent;     
             //   var element = event.target;
@@ -243,13 +243,13 @@ var getInstruction = function (titVal) {
 
 }
 
-var getIngredientsList = function (titVal) {
+var getIngredientsList = function(titVal) {
     var requestUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + titVal;
     fetch(requestUrl)
-        .then(function (response) {
+        .then(function(response) {
             return response.json();
         })
-        .then(function (data) {
+        .then(function(data) {
             console.log(data);
             ingredientsContainerOne.textContent = '';
             if (data.meals[0].strIngredient1 !== "" && data.meals[0].strIngredient1 !== null) {
@@ -391,12 +391,13 @@ var getIngredientsList = function (titVal) {
                 return data
             }
             return data;
-        }
-        )
+        })
 }
 
 init();
-
+$('#modal1').on('hide', function() {
+    window.location.reload();
+});
 
 //function to display modal from local storage
 

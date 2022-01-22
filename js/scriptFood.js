@@ -148,7 +148,6 @@ var searchMealDessert = function () {
     })
     .then(function (data) {
       console.log(data);
-
       var foodOneIndex = [(Math.floor(Math.random() * data.meals.length))]
       foodImg1.src = data.meals[foodOneIndex].strMealThumb;
       foodTitle1.textContent = data.meals[foodOneIndex].strMeal;

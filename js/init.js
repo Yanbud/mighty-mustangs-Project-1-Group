@@ -177,6 +177,7 @@ function handleMovieFav(event) {
         setMovie();
         displayMovie();
         favMoviesEl.textContent = '';
+        
     }
 }
 
@@ -199,8 +200,8 @@ function displayModMovie(event) {
     span.textContent = 'Select the movie as my movie choice';
     label.append(input, span)
     movieFormEl.append(h2, img, label);
+    getMoviePlot(titVal)
     mymovie.textContent = '';
-
 }
 
 function removeMovie(event) {

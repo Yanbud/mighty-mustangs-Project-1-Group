@@ -176,6 +176,7 @@ function handleMovieFav(event) {
         setMovie();
         displayMovie();
         favMoviesEl.textContent = '';
+        
     }
 }
 
@@ -198,8 +199,8 @@ function displayModMovie(event) {
     span.textContent = 'Select the movie as my movie choice';
     label.append(input, span)
     movieFormEl.append(h2, img, label);
+    getMoviePlot(titVal)
     mymovie.textContent = '';
-
 }
 
 function removeMovie(event) {
@@ -394,9 +395,11 @@ var getIngredientsList = function(titVal) {
 }
 
 init();
+
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, {
         dismissible: false
     });
 });
+

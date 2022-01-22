@@ -233,10 +233,8 @@ var getInstruction = function(titVal) {
             //   var divEl = element.parentElement.parentElement;
             //   console.log(divEl);
 
-
             modalRecipeInstructions.textContent = "";
             //   modalRecipeInstructions.textContent = data.meals[0].strInstructions;
-
 
             modalRecipeInstructions.textContent = data.meals[0].strInstructions;
         })

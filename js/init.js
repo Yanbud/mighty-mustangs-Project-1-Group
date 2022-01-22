@@ -29,7 +29,6 @@ function displayFood() {
         div.setAttribute('class', 'img-block');
         var img = document.createElement('img');
         img.setAttribute('src', items.img);
-        img.setAttribute('style', 'width:100px');
 
         var button = document.createElement('button');
         button.classList.add('material-icons', 'button-del')
@@ -394,13 +393,11 @@ var getIngredientsList = function(titVal) {
 }
 
 init();
-$('#modal1').on('hide', function() {
-    window.location.reload();
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {
+        dismissible: false
+    });
 });
 
-//function to display modal from local storage
-
-// var displayLocalModal = function(event){
-
-
-// }

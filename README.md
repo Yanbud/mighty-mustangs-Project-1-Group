@@ -10,7 +10,7 @@ This project gave us experience with using JavaScript, HTML, CSS, a CSS library 
 To view our project (and find some new recipes and movies!) simply click the attached link and you'll be able to see the deployed project. 
 https://mbarrientos1129.github.io/mighty-mustangs-Project-1-Group/
 
-Project mock-up image. Link:(./images/screenshot.png)
+![Project mock-up image.](./images/screenshot.png)
 
 Also, here's the code for the project in our Git repository: 
 https://github.com/mbarrientos1129/mighty-mustangs-Project-1-Group

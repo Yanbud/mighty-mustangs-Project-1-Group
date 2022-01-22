@@ -12,6 +12,10 @@ var movieImages = [
     movieImage3 = document.querySelector('#movie-image-3'),
     movieImage4 = document.querySelector('#movie-image-4')
 ]
+// var moviePlot1 = document.querySelector('#movie-plot-1')
+// var moviePlot2 = document.querySelector('#movie-plot-2')
+// var moviePlot3 = document.querySelector('#movie-plot-3')
+// var moviePlot4 = document.querySelector('#movie-plot-4')
 
 var moviePlot = document.querySelector('#movie-plot')
 
@@ -35,12 +39,12 @@ var movieList = ["Red Notice", "Predator", "The Green Mile", "I,Robot", "The Giv
     "The Social Network", "Fast and Furious", "Free Guy", "The Suicide Squad", "Luca", "Mortal Kombat",
     "The Unholy", "Sonic the Hedgehog 2", "Nobody", "Deadpool", "Deadpool 2", "Sonic the Hedgehog",
     "Ted", "Ted 2", "Toy Story", "Toy Story 2", "Toy Story 3", "Toy Story 4", "House of Gucci",
-    "Shrek", "Venom", "Love & Other Drugs", "The Wolf of Wall Street", "Fatherhood", "" ]
+    "Shrek", "Venom", "Love & Other Drugs", "The Wolf of Wall Street", "Fatherhood", ""]
 //Movie 1
 function getRandomMovie1() {
     var randomIndex = Math.floor(Math.random() * movieList.length);
     var movieName = movieList[randomIndex]
-    var movieUrl = 'http://www.omdbapi.com/?t=' + movieName + '&apikey=21149232'
+    var movieUrl = 'https://www.omdbapi.com/?t=' + movieName + '&apikey=21149232'
     fetch(movieUrl)
         .then(response => {
             return response.json()
@@ -62,14 +66,14 @@ function getRandomMovie1() {
 function getRandomMovie2() {
     var randomIndex = Math.floor(Math.random() * movieList.length);
     var movieName = movieList[randomIndex]
-    var movieUrl = 'http://www.omdbapi.com/?t=' + movieName + '&apikey=21149232'
+    var movieUrl = 'https://www.omdbapi.com/?t=' + movieName + '&apikey=21149232'
     fetch(movieUrl)
         .then(response => {
             return response.json()
         })
         .then(data => {
             console.log(data)
-            //Movie 1
+
             movieImage2.src = data.Poster
             movieTitle2.textContent = data.Title
 
@@ -83,14 +87,14 @@ function getRandomMovie2() {
 function getRandomMovie3() {
     var randomIndex = Math.floor(Math.random() * movieList.length);
     var movieName = movieList[randomIndex]
-    var movieUrl = 'http://www.omdbapi.com/?t=' + movieName + '&apikey=21149232'
+    var movieUrl = 'https://www.omdbapi.com/?t=' + movieName + '&apikey=21149232'
     fetch(movieUrl)
         .then(response => {
             return response.json()
         })
         .then(data => {
             console.log(data)
-            //Movie 1
+
             movieImage3.src = data.Poster
             movieTitle3.textContent = data.Title
 
@@ -104,14 +108,14 @@ function getRandomMovie3() {
 function getRandomMovie4() {
     var randomIndex = Math.floor(Math.random() * movieList.length);
     var movieName = movieList[randomIndex]
-    var movieUrl = 'http://www.omdbapi.com/?t=' + movieName + '&apikey=21149232'
+    var movieUrl = 'https://www.omdbapi.com/?t=' + movieName + '&apikey=21149232'
     fetch(movieUrl)
         .then(response => {
             return response.json()
         })
         .then(data => {
             console.log(data)
-            //Movie 1
+
             movieImage4.src = data.Poster
             movieTitle4.textContent = data.Title
 
@@ -130,27 +134,21 @@ var setMovies = function () {
 }
 randomMovieBtn.addEventListener("click", setMovies)
 
+
 var getMoviePlot = function (titVal) {
-    var requestUrl = 'http://www.omdbapi.com/?t=' + titVal + '&apikey=21149232';
+    var requestUrl = 'https://www.omdbapi.com/?t=' + titVal + '&apikey=21149232';
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             console.log(data);
-            //   var titVal = divEl.querySelector('div').textContent;     
-            //   var element = event.target;
 
-            //   var divEl = element.parentElement.parentElement;
-            //   console.log(divEl);
-
-
-           moviePlot.textContent = "";
-            //   modalRecipeInstructions.textContent = data.meals[0].strInstructions;
-
-
+            moviePlot.textContent = "";
             moviePlot.textContent = data.Plot;
+
             console.log(data.Plot)
         })
 
 }
+getMoviePlot()

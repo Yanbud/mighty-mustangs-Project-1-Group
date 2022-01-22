@@ -177,6 +177,7 @@ function handleMovieFav(event) {
         setMovie();
         displayMovie();
         favMoviesEl.textContent = '';
+        getMoviePlot(titVal)
     }
 }
 

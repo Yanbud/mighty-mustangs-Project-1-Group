@@ -12,10 +12,6 @@ var movieImages = [
     movieImage3 = document.querySelector('#movie-image-3'),
     movieImage4 = document.querySelector('#movie-image-4')
 ]
-// var moviePlot1 = document.querySelector('#movie-plot-1')
-// var moviePlot2 = document.querySelector('#movie-plot-2')
-// var moviePlot3 = document.querySelector('#movie-plot-3')
-// var moviePlot4 = document.querySelector('#movie-plot-4')
 
 var moviePlot = document.querySelector('#movie-plot')
 

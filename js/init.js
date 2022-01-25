@@ -29,11 +29,6 @@ function displayFood() {
         div.setAttribute('class', 'img-block');
         var img = document.createElement('img');
         img.setAttribute('src', items.img);
-
-        var button = document.createElement('button');
-        button.classList.add('material-icons', 'button-del')
-        button.textContent = 'delete';
-
         var h2 = document.createElement('h2');
         h2.textContent = items.title;
         var day = new Date();
@@ -42,7 +37,7 @@ function displayFood() {
         var dayName = days[day.getDay()];
         divDate.innerHTML = dayName + ' ( ' + day.getMonth() + 1 + '-' + day.getDate() + '-' + day.getFullYear() + ' )';
         divDate.classList.add('add-date')
-        div.append(img, button, h2, divDate);
+        div.append(img, h2, divDate);
         favFoodsEl.append(div);
     }
 }
@@ -108,22 +103,9 @@ function displayMod(event) {
     myfood.textContent = '';
     getInstruction(titVal);
     getIngredientsList(titVal);
-
-
 }
 
-function removeFood(event) {
-    var element = event.target;
-    if (element.matches('button') === true) {
-        var index = element.parentElement.getAttribute('data-index');
-        foodList.splice(index, 1);
-        element.parentElement.remove();
-    }
-    setFood();
 
-}
-
-$('.fav-foods').children('div').on('click', removeFood);
 foodBlock.on('click', displayMod);
 foodFormEl.on('click', handleFoodFav);
 
@@ -139,10 +121,6 @@ function displayMovie() {
         img.setAttribute('src', items.img);
         img.setAttribute('style', 'width:100px');
 
-        var button = document.createElement('button');
-        button.classList.add('material-icons', 'button-del')
-        button.textContent = 'delete';
-
         var h2 = document.createElement('h2');
         h2.textContent = items.title;
         var day = new Date();
@@ -151,7 +129,7 @@ function displayMovie() {
         var dayName = days[day.getDay()];
         divDate.innerHTML = dayName + ' ( ' + day.getMonth() + 1 + '-' + day.getDate() + '-' + day.getFullYear() + ' )';
         divDate.classList.add('add-date')
-        div.append(img, button, h2, divDate);
+        div.append(img, h2, divDate);
         favMoviesEl.append(div);
     }
 }
@@ -161,7 +139,6 @@ function setMovie() {
 }
 
 function handleMovieFav(event) {
-
     var element = event.target;
     if (element.matches('input') === true) {
         var divEl = element.parentElement.parentElement;
@@ -176,7 +153,7 @@ function handleMovieFav(event) {
         setMovie();
         displayMovie();
         favMoviesEl.textContent = '';
-        
+
     }
 }
 
@@ -203,39 +180,19 @@ function displayModMovie(event) {
     mymovie.textContent = '';
 }
 
-function removeMovie(event) {
-    var element = event.target;
-    if (element.matches('button') === true) {
-        var index = element.parentElement.getAttribute('data-index');
-        movieList.splice(index, 1);
-        element.parentElement.remove();
-    }
-    setMovie();
-}
 
-$('.fav-movies').children('div').on('click', removeMovie);
 foodBlock.on('click', displayModMovie);
 movieFormEl.on('click', handleMovieFav);
 
 
 var getInstruction = function(titVal) {
-
     var requestUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=' + titVal;
     fetch(requestUrl)
         .then(function(response) {
             return response.json();
         })
         .then(function(data) {
-            console.log(data);
-            //   var titVal = divEl.querySelector('div').textContent;     
-            //   var element = event.target;
-
-            //   var divEl = element.parentElement.parentElement;
-            //   console.log(divEl);
-
             modalRecipeInstructions.textContent = "";
-            //   modalRecipeInstructions.textContent = data.meals[0].strInstructions;
-
             modalRecipeInstructions.textContent = data.meals[0].strInstructions;
         })
 
@@ -393,11 +350,9 @@ var getIngredientsList = function(titVal) {
 }
 
 init();
-
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems, {
         dismissible: false
     });
 });
-
